@@ -26,9 +26,22 @@ server.use('/public', express['static'](path.join(__dirname, '/build')));
 server.use(compression());
 server.use(bodyParser.json());
 
-server.use((req, res, next) => {
-    const context = app.createContext();
+// Get access to the fetchr plugin instance
+const fetchrPlugin = app.getPlugin('FetchrPlugin');
+// Register our messages REST service
+fetchrPlugin.registerService(require('./services/fileService'));
+// Set up the fetchr middleware
+server.use(fetchrPlugin.getXhrPath(), fetchrPlugin.getMiddleware());
 
+
+
+server.use((req, res, next) => {
+    const context = app.createContext({
+        req: req, // The fetchr plugin depends on this
+        xhrContext: {
+            //_csrf: req.csrfToken() // Make sure all XHR requests have the CSRF token
+        }
+    });
     debug('Executing navigate action');
     context.getActionContext().executeAction(navigateAction, {
         url: req.url
