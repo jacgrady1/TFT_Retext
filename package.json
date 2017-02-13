@@ -23,11 +23,18 @@
     "fluxible-addons-react": "^0.2.0",
     "fluxible-plugin-fetchr": "^0.3.0",
     "fluxible-router": "^0.4.0",
+    "nlcst-to-string": "^2.0.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-dropzone": "^3.5.3",
+    "retext": "^4.0.0",
+    "retext-emoji": "^2.0.0",
+    "retext-keywords": "^3.1.0",
+    "retext-profanities": "^3.1.0",
+    "retext-usage": "^0.5.0",
     "serialize-javascript": "^1.0.0",
-    "serve-favicon": "^2.1.6"
+    "serve-favicon": "^2.1.6",
+    "vfile-reporter": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.6",

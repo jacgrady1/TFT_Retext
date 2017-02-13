@@ -5,12 +5,12 @@ export default {
         page: 'home',
         title: 'Home',
         handler: require('../components/Home')
-    },
-    about: {
-        path: '/about',
-        method: 'get',
-        page: 'about',
-        title: 'About',
-        handler: require('../components/About')
     }
+    // about: {
+    //     path: '/about',
+    //     method: 'get',
+    //     page: 'about',
+    //     title: 'About',
+    //     handler: require('../components/About')
+    // }
 };
